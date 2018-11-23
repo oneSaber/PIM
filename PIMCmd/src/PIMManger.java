@@ -1,5 +1,3 @@
-import com.sun.deploy.util.SyncAccess;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,15 +10,6 @@ public class PIMManger {
 
     private void CommandNote(){
         System.out.println("---Enter a command (suported commands are List Create Save Load Quit)--");
-    }
-
-    private Calendar GetCalendatr(Scanner scanner) throws Exception{
-        String dateinput = scanner.nextLine();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date  = simpleDateFormat.parse(dateinput);
-        Calendar cla = Calendar.getInstance();
-        cla.setTime(date);
-        return cla;
     }
 
     static public PIMManger CreatePIMManger(){
@@ -83,8 +72,7 @@ public class PIMManger {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter date for todo item:");
         // 解析时间
-        Calendar todoTime = GetCalendatr(scanner);
-
+        String todoTime = scanner.nextLine();
         System.out.println("Enter Todo Text:");
         String todoText = scanner.nextLine();
 
@@ -111,7 +99,7 @@ public class PIMManger {
     private void CreateAppointment() throws Exception{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the date of appointment:");
-        Calendar Date = GetCalendatr(scanner);
+        String Date = scanner.nextLine();
         System.out.println("Enter the appointment description:");
         String Desc = scanner.nextLine();
         System.out.println("Enter the priority:");

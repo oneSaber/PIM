@@ -1,13 +1,9 @@
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 public class PIMTodo extends  PIMEntity {
-    private Calendar Date;
+    private PIMDate Date;
     private String TodoText;
-    PIMTodo(String priorty, Calendar date,String todoText){
+    PIMTodo(String priorty, String date,String todoText){
         Priority = priorty;
-        Date = date;
+        Date = new PIMDate(date);
         TodoText = todoText;
     }
     PIMTodo(){
@@ -16,9 +12,7 @@ public class PIMTodo extends  PIMEntity {
 
     public void FromString(String arg){}
     public String ToString(){
-        return String.format("TODO: %s %d/%d/%d %s",getPriority(),Date.getTime().getDate(),
-                Date.getTime().getMonth(),
-                Date.getTime().getYear(),
-                TodoText);
+        return String.format("TODO: %s %s %s",getPriority(),
+                Date.toString(), TodoText);
     }
 }

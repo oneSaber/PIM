@@ -1,16 +1,15 @@
-import java.util.Calendar;
-
 public class PIMAppointment extends PIMEntity {
-    private Calendar Date;
+    private PIMDate Date;
     private String Description;
 
-    PIMAppointment(String prioroty, Calendar date,String desc){
+    PIMAppointment(String prioroty, String date,String desc){
         Priority = prioroty;
-        Date = date;
+        Date = new PIMDate(date);
         Description = desc;
     }
     public void FromString(String arg){}
     public String ToString(){
-        return "hello world";
+        return String.format("Appointment: %S %s %s",getPriority(),
+                Date.toString(),Description);
     }
 }
