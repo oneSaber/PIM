@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PIMCmd.iml" filepath="$PROJECT_DIR$/PIMCmd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PIMCmd.iml" filepath="$PROJECT_DIR$/.idea/PIMCmd.iml" />
     </modules>
   </component>
 </project>
